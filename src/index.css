@@ -119,15 +119,15 @@ header {
 .logo {
   font-family: "Unbounded", sans-serif;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 @media (min-width: 768px) {
   .logo {
-    font-size: 32px;
-    letter-spacing: -2px;
+    font-size: 20px;
+    letter-spacing: -1px;
   }
 }
 
@@ -214,23 +214,23 @@ nav a:hover {
 
 .hero-title {
   font-family: "Unbounded", sans-serif;
-  font-size: 48px;
-  line-height: 0.9;
+  font-size: 32px;
+  line-height: 1;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 70px;
-    margin-bottom: 30px;
+    font-size: 48px;
+    margin-bottom: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 90px;
+    font-size: 60px;
   }
 }
 
@@ -364,20 +364,20 @@ nav a:hover {
 
 .section-title {
   font-family: "Unbounded", sans-serif;
-  font-size: 36px;
+  font-size: 24px;
   text-transform: uppercase;
   line-height: 1;
 }
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 48px;
+    font-size: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .section-title {
-    font-size: 64px;
+    font-size: 40px;
   }
 }
 
@@ -503,21 +503,21 @@ nav a:hover {
 }
 
 .vibe-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1;
+  margin-bottom: 16px;
+  line-height: 1.1;
 }
 
 @media (min-width: 768px) {
   .vibe-title {
-    font-size: 42px;
+    font-size: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .vibe-title {
-    font-size: 54px;
+    font-size: 40px;
   }
 }
 

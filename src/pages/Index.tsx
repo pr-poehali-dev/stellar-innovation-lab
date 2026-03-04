@@ -94,10 +94,9 @@ export default function Index() {
         <div className="logo">ТОЧКА НА КАРТЕ</div>
         <nav>
           <a href="#">Маршруты</a>
-          <a href="#">Эксперты</a>
           <a href="#">Медиатека</a>
           <a href="#">События</a>
-          <a href="#">О проекте</a>
+          <a href="#">Личный кабинет</a>
         </nav>
         <button className="btn-cta">Войти</button>
       </header>
