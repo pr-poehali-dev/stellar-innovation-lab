@@ -1,245 +1,277 @@
+import Icon from "@/components/ui/icon";
+
+const routes = [
+  {
+    tag: "Популярное",
+    tagColor: "var(--primary)",
+    img: "https://cdn.poehali.dev/projects/bb4e57e7-643a-49a8-b040-40191973ff3a/files/7c8b0b5c-e8ba-4921-870f-89ec764e112d.jpg",
+    title: "Прохоровское поле",
+    duration: "1 день",
+    price: "от 2 500 ₽",
+    desc: "Мемориал Победы, Звонница, музей «Третье ратное поле России». Незабываемый патриотический маршрут.",
+  },
+  {
+    tag: "Сезонное",
+    tagColor: "var(--secondary)",
+    img: "https://cdn.poehali.dev/projects/bb4e57e7-643a-49a8-b040-40191973ff3a/files/8ea5dc14-e0e1-428c-a829-67eaa5abaa51.jpg",
+    title: "Осень в усадьбах",
+    duration: "Уикенд",
+    price: "от 4 800 ₽",
+    desc: "Усадьбы Белгородчины в золоте осени — Юсупово, Томаровка, Грайворон. С дегустацией местных продуктов.",
+  },
+  {
+    tag: "Семейное",
+    tagColor: "var(--accent)",
+    tagDark: true,
+    img: "https://cdn.poehali.dev/projects/bb4e57e7-643a-49a8-b040-40191973ff3a/files/7f50788c-8eb1-4b4d-a1ed-cfa4c3facb7c.jpg",
+    title: "С детьми по усадьбам",
+    duration: "1 день",
+    price: "от 1 800 ₽",
+    desc: "Мастер-классы по гончарству, пасека, фольклорные программы. Дети в восторге, родители в покое.",
+  },
+];
+
+const experts = [
+  { name: "Александр Петров", spec: "Краевед, историк", rating: "4.9", reviews: 124, icon: "BookOpen" },
+  { name: "Марина Соколова", spec: "Гастро-туризм, кухня", rating: "4.8", reviews: 87, icon: "UtensilsCrossed" },
+  { name: "Виктор Чернов", spec: "Экотуризм, природа", rating: "5.0", reviews: 56, icon: "TreePine" },
+];
+
+const categories = [
+  { label: "Исторические", icon: "Landmark" },
+  { label: "Гастрономические", icon: "UtensilsCrossed" },
+  { label: "Эко-маршруты", icon: "TreePine" },
+  { label: "Патриотические", icon: "Shield" },
+  { label: "Семейные", icon: "Heart" },
+  { label: "Событийные", icon: "CalendarDays" },
+];
+
 export default function Index() {
   return (
     <>
       <div className="grain-overlay" />
 
+      {/* Header */}
       <header className="header">
-        <div className="logo">VINYL*DINER</div>
+        <div className="logo">БЕЛОГОРЬЕ</div>
         <nav>
-          <a href="#">Меню</a>
-          <a href="#">О нас</a>
-          <a href="#">Афиша</a>
-          <a href="#">Адреса</a>
+          <a href="#">Маршруты</a>
+          <a href="#">Конструктор</a>
+          <a href="#">Эксперты</a>
+          <a href="#">События</a>
+          <a href="#">Медиатека</a>
         </nav>
-        <button className="btn-cta">Забронировать</button>
+        <button className="btn-cta">Личный кабинет</button>
       </header>
 
       <main>
+        {/* Hero */}
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">
-              БЕЗ ПОНТОВ,
+              ОТКРОЙ
               <br />
-              ТОЛЬКО <span>ВКУС</span>
+              <span>БЕЛОГОРЬЕ</span>
             </h1>
             <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
-              Эстетика 70-х в современной подаче. Локальные продукты, огненные блюда и атмосфера для настоящих ценителей.
+              Туристическая платформа Белгородской области. Готовые маршруты от местных экспертов, конструктор путешествий и уникальный опыт региона.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+
+            {/* Search */}
+            <div className="search-bar">
+              <Icon name="Search" size={18} />
+              <input type="text" placeholder="Куда едем? Усадьбы, Прохоровка, гастро..." />
               <button className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>
-                Заказать
+                Найти
               </button>
-              <button className="btn-cta" style={{ background: "white" }}>
-                Смотреть меню
-              </button>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-4">
+              {["Исторические", "Гастро", "Эко", "Семейные", "1 день"].map((tag) => (
+                <span key={tag} className="filter-tag">{tag}</span>
+              ))}
             </div>
           </div>
           <div className="hero-img">
             <div className="sticker">
-              СВЕЖАК
+              50+
               <br />
-              КАЖДЫЙ ДЕНЬ
+              МАРШРУТОВ
             </div>
             <div className="floating-tag hidden md:block" style={{ top: "20%", left: "10%" }}>
-              #ЭСТЕТИКА
+              #БЕЛОГОРЬЕ
             </div>
             <div className="floating-tag hidden md:block" style={{ bottom: "30%", right: "20%" }}>
-              ОГОНЬ
+              ОТКРЫВАЙ
             </div>
           </div>
         </section>
 
+        {/* Marquee */}
         <div className="marquee">
           <div className="marquee-content">
-            &nbsp; * БУРГЕРЫ КОТОРЫЕ РВУТ * КРАФТОВЫЕ КОКТЕЙЛИ * ТОЛЬКО РЕТРО ВАЙБ * ОТКРЫТЫ ДО 2:00 * ЛУЧШИЕ В ГОРОДЕ *
-            БУРГЕРЫ КОТОРЫЕ РВУТ * КРАФТОВЫЕ КОКТЕЙЛИ * ТОЛЬКО РЕТРО ВАЙБ * ОТКРЫТЫ ДО 2:00 * ЛУЧШИЕ В ГОРОДЕ
+            &nbsp; * ПРОХОРОВСКОЕ ПОЛЕ * УСАДЬБЫ БЕЛГОРОДЧИНЫ * МЕСТНЫЕ ЭКСПЕРТЫ * УНИКАЛЬНЫЙ ОПЫТ * МАСТЕР-КЛАССЫ *
+            ПРОХОРОВСКОЕ ПОЛЕ * УСАДЬБЫ БЕЛГОРОДЧИНЫ * МЕСТНЫЕ ЭКСПЕРТЫ * УНИКАЛЬНЫЙ ОПЫТ * МАСТЕР-КЛАССЫ
           </div>
         </div>
 
+        {/* Categories */}
+        <section className="section-padding" style={{ borderBottom: "var(--border)" }}>
+          <div className="section-header">
+            <h2 className="section-title">КАТЕГОРИИ</h2>
+            <a href="#" className="text-sm md:text-base" style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}>
+              Все маршруты
+            </a>
+          </div>
+          <div className="categories-grid">
+            {categories.map((cat) => (
+              <div key={cat.label} className="category-card">
+                <Icon name={cat.icon} size={28} />
+                <span>{cat.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Popular Routes */}
         <section className="section-padding">
           <div className="section-header">
-            <h2 className="section-title">ВЫБОР ШЕФА</h2>
-            <a
-              href="#"
-              className="text-sm md:text-base"
-              style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}
-            >
-              Всё меню
+            <h2 className="section-title">МАРШРУТЫ</h2>
+            <a href="#" className="text-sm md:text-base" style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}>
+              Смотреть все
             </a>
           </div>
 
           <div className="menu-grid">
-            {/* Item 1 */}
-            <div className="menu-card">
-              <span className="menu-tag">Хит продаж</span>
-              <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Классический бургер"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <h3>Классика</h3>
-                  <span className="price">1 400 ₽</span>
+            {routes.map((route) => (
+              <div key={route.title} className="menu-card">
+                <span className="menu-tag" style={{ background: route.tagColor, color: route.tagDark ? "var(--dark)" : "white" }}>
+                  {route.tag}
+                </span>
+                <img src={route.img} alt={route.title} />
+                <div className="menu-card-body">
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                    <h3>{route.title}</h3>
+                    <span className="price">{route.price}</span>
+                  </div>
+                  <div style={{ display: "flex", gap: "12px", marginBottom: "10px" }}>
+                    <span className="route-meta"><Icon name="Clock" size={13} /> {route.duration}</span>
+                    <span className="route-meta"><Icon name="MapPin" size={13} /> Белгород. обл.</span>
+                  </div>
+                  <p style={{ fontSize: "14px", color: "#666" }}>{route.desc}</p>
+                  <button className="btn-cta" style={{ marginTop: "16px", width: "100%", background: "var(--primary)", color: "white" }}>
+                    Подробнее
+                  </button>
                 </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>
-                  Тройной смэш из мраморной говядины, фирменный соус, маринованные огурцы на бриоши.
-                </p>
               </div>
-            </div>
-
-            {/* Item 2 */}
-            <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--secondary)" }}>
-                Острое
-              </span>
-              <img
-                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Неоновая пицца"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <h3>Электро Пепперони</h3>
-                  <span className="price">1 800 ₽</span>
-                </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>Двойная пепперони, острый мёд, тесто на закваске.</p>
-              </div>
-            </div>
-
-            {/* Item 3 */}
-            <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--accent)", color: "var(--dark)" }}>
-                Популярное
-              </span>
-              <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Диско Сауэр"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <h3>Диско Сауэр</h3>
-                  <span className="price">1 200 ₽</span>
-                </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>
-                  Джин, цветок бузины, голубой чай и съедобная золотая пыльца.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
+        {/* Builder Promo */}
         <section className="retro-vibe">
           <div>
-            <h2 className="vibe-title">ВАЙБ-ЧЕК ПРОЙДЕН.</h2>
+            <h2 className="vibe-title">СОСТАВЬ СВОЙ МАРШРУТ.</h2>
             <p className="vibe-text">
-              Мы не просто кормим. Мы создаём моменты. От плейлиста хип-хопа 90-х до диванов в стиле 70-х — каждый уголок
-              продуман для твоего идеального кадра. Бронь не нужна, просто приходи с настроением.
+              Конструктор путешествий позволяет создать идеальную поездку: выбери достопримечательности, добавь мастер-классы, кафе и жильё — система сама подберёт логистику и рассчитает стоимость.
             </p>
             <button className="btn-cta" style={{ background: "var(--dark)", color: "white", borderColor: "white" }}>
-              Наша история
+              Открыть конструктор
             </button>
           </div>
           <div className="vibe-img"></div>
         </section>
 
+        {/* Experts */}
+        <section className="section-padding" style={{ borderBottom: "var(--border)" }}>
+          <div className="section-header">
+            <h2 className="section-title">ЭКСПЕРТЫ</h2>
+            <a href="#" className="text-sm md:text-base" style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}>
+              Все гиды
+            </a>
+          </div>
+          <div className="experts-grid">
+            {experts.map((exp) => (
+              <div key={exp.name} className="expert-card">
+                <div className="expert-avatar">
+                  <Icon name={exp.icon} size={32} />
+                </div>
+                <div className="expert-info">
+                  <h3>{exp.name}</h3>
+                  <p>{exp.spec}</p>
+                  <div className="expert-rating">
+                    <Icon name="Star" size={14} />
+                    <strong>{exp.rating}</strong>
+                    <span>· {exp.reviews} отзывов</span>
+                  </div>
+                </div>
+                <button className="btn-cta" style={{ background: "var(--accent)", color: "var(--dark)" }}>
+                  Записаться
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Events teaser */}
         <section className="section-padding">
           <h2 className="section-title" style={{ marginBottom: "40px", textAlign: "center" }}>
-            @VINYL.DINER
+            БЛИЖАЙШИЕ СОБЫТИЯ
           </h2>
           <div className="social-grid">
-            <div className="social-item">
-              <img
-                src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 1"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 2"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 3"
-              />
-            </div>
-            <div className="social-item">
-              <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 4"
-              />
-            </div>
+            {[
+              { date: "15 МАЯ", title: "Фестиваль «Белгородский мёд»", place: "Центр Белгорода" },
+              { date: "22 МАЯ", title: "Экскурсия «Ночь музеев»", place: "Белгородский музей" },
+              { date: "1 ИЮН", title: "День защиты детей в усадьбах", place: "Усадьба Юсупово" },
+              { date: "14 ИЮН", title: "Гастрофест локальной кухни", place: "Старый Оскол" },
+            ].map((ev) => (
+              <div key={ev.title} className="event-card">
+                <div className="event-date">{ev.date}</div>
+                <div className="event-body">
+                  <h4>{ev.title}</h4>
+                  <p><Icon name="MapPin" size={12} /> {ev.place}</p>
+                </div>
+                <Icon name="ArrowRight" size={20} />
+              </div>
+            ))}
           </div>
         </section>
       </main>
 
       <footer>
         <div>
-          <div className="footer-logo">VINYL*DINER</div>
+          <div className="footer-logo">БЕЛОГОРЬЕ</div>
           <p style={{ color: "#666", lineHeight: 1.6 }}>
-            Твоё место для еды высокого качества и лоу-фай атмосферы. С 2024, но ощущается как 1974.
+            Туристическая платформа Белгородской области. Открывайте регион вместе с местными экспертами.
           </p>
         </div>
         <div className="footer-links">
           <h4>Навигация</h4>
           <ul>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Меню
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                О нас
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Политика
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Условия
-              </a>
-            </li>
+            {["Маршруты", "Конструктор", "Эксперты", "События", "Медиатека", "О проекте"].map((link) => (
+              <li key={link}>
+                <a href="#" style={{ color: "inherit", textDecoration: "none" }}>{link}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer-links">
-          <h4>Часы работы</h4>
+          <h4>Поддержка</h4>
           <ul>
-            <li>Вт-Чт: 12:00 - 23:00</li>
-            <li>Пт-Сб: 12:00 - 02:00</li>
-            <li>Вс: 11:00 - 21:00</li>
-            <li>Пн: Выходной</li>
+            {["FAQ", "Напишите нам", "Условия пользования", "Политика данных"].map((link) => (
+              <li key={link}>
+                <a href="#" style={{ color: "inherit", textDecoration: "none" }}>{link}</a>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="footer-bottom">
-          <span>2025 VINYL DINER</span>
-          <span>ВКУС КЛАССИКИ</span>
-          <span>IG / TW / TK</span>
+        <div className="footer-links">
+          <h4>Контакты</h4>
+          <ul>
+            <li>Комитет по туризму Белгородской области</li>
+            <li>info@belogorye.ru</li>
+            <li>8-800-000-00-00</li>
+          </ul>
         </div>
       </footer>
     </>
