@@ -242,8 +242,8 @@ nav a:hover {
 }
 
 .hero-img {
-  background: url("https://cdn.poehali.dev/projects/bb4e57e7-643a-49a8-b040-40191973ff3a/files/8ea5dc14-e0e1-428c-a829-67eaa5abaa51.jpg")
-    center center / cover;
+  background: url("https://cdn.poehali.dev/projects/bb4e57e7-643a-49a8-b040-40191973ff3a/bucket/e198feb8-6d3e-4d94-acc0-82408f99efd7.jpg")
+    center top / cover;
   position: relative;
   min-height: 300px;
 }
