@@ -53,7 +53,7 @@ export default function Index() {
 
       {/* Header */}
       <header className="header">
-        <div className="logo">БЕЛОГОРЬЕ</div>
+        <div className="logo">ТОЧКА НА КАРТЕ</div>
         <nav>
           <a href="#">Маршруты</a>
           <a href="#">Конструктор</a>
@@ -69,12 +69,12 @@ export default function Index() {
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-title">
-              ОТКРОЙ
+              ТОЧКА НА КАРТЕ —
               <br />
-              <span>БЕЛОГОРЬЕ</span>
+              <span>БЕЛГОРОД</span>
             </h1>
             <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
-              Туристическая платформа Белгородской области. Готовые маршруты от местных экспертов, конструктор путешествий и уникальный опыт региона.
+              Туристическая платформа Белгородской области. Готовые маршруты от местных экспертов, изучение культуры не выходя из дома, конструктор путешествий и уникальный опыт региона.
             </p>
 
             {/* Search */}
@@ -240,7 +240,7 @@ export default function Index() {
 
       <footer>
         <div>
-          <div className="footer-logo">БЕЛОГОРЬЕ</div>
+          <div className="footer-logo">ТОЧКА НА КАРТЕ</div>
           <p style={{ color: "#666", lineHeight: 1.6 }}>
             Туристическая платформа Белгородской области. Открывайте регион вместе с местными экспертами.
           </p>
